@@ -138,7 +138,7 @@ fn get_process_image_name(process: &Process) -> String {
 fn execute_command(pid: &Pid, process: &Process, process_command_config: &ProcessCommandConfig) {
     let command_string = process_command_config.command.replace("{}", pid.as_u32().to_string().as_str());
     let command_split: Vec<&str> = command_string.split(' ').collect();
-    let command_string_rebuilt: String = command_split[0].to_string() + command_split[1..].join(" ").as_str();
+    let command_string_rebuilt: String = command_split[0].to_string() + " " + command_split[1..].join(" ").as_str();
     match command_result(Command::new(command_split[0])
         .args(command_split[1..].iter())
         .output()) {

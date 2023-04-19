@@ -34,11 +34,11 @@ allow-root-process=sway
 exclude-process=sleep
 
 [vcache]
-command=/usr/sbin/taskset -pc 0-15 {}
+command=/usr/sbin/taskset -pc 0-7,16-23 {}
 process=Z:\\home\\myusername\\.xlcore\\ffxiv\\game\\ffxiv_dx11.exe
 
 [highfreq]
-command=/usr/sbin/taskset -pc 16-31 {}
+command=/usr/sbin/taskset -pc 8-15,24-31 {}
 process=/opt/discord/Discord
 process=sway
 ```
